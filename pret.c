@@ -15,6 +15,12 @@ float monthlyPayments(float amount, float interest, float time)
     	return resMonthlyPayment;
 }
 
+float totalPayment(float time, float monthlyPayment)
+{
+	float res = (time * 12) * monthlyPayment;
+	return res;
+}
+
 int main()
 {
 	//amount: money borrowed
@@ -76,6 +82,7 @@ int main()
 			break;
 
 		float res = monthlyPayments(amount, interest, time);
+		float resTotalPayment = totalPayment(time, res);		
 
 		//check if interest rate and loan duration are true to print the result
 		if ((interest >= minInterest && interest <= maxInterest) && (time >= minTime))
@@ -86,6 +93,7 @@ int main()
 			printf("-- Choosen interest rate: %.f%%\n", interest);
 			printf("-- Loan duration: %.f years\n", time);
 			printf("-- Estimated monthly payments: %.2f DH\n", res);
+			printf("-- Total Payment: %.2f DH\n", resTotalPayment);
 
 			printf("\n####################--Results--###################\n\n");
 		}
