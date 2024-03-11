@@ -61,6 +61,8 @@ int main()
 		if (attempts == maxAttempts)
 			break;
 			
+		attempts = 0;
+
 		printf("Enter duration (minimum 5 years): ");
 
 		//check if loan duration is atleast 5 years
@@ -80,6 +82,8 @@ int main()
 
 		if (attempts == maxAttempts)
 			break;
+
+		attempts = 0;
 
 		float res = monthlyPayments(amount, interest, time);
 		float resTotalPayment = totalPayment(time, res);		
